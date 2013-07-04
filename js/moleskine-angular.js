@@ -11,14 +11,6 @@
 
 var MoleskineModule = angular.module('MoleskineModule', []);
 
-// MoleskineModule.constant('version', '0.1');
-
-// MoleskineModule.config(function() { 
-// });
-
-// MoleskineModule.run(function() { 
-// });
-
 /**
  * @doc directive
  * @id MoleskineModule:moleskine
@@ -26,15 +18,20 @@ var MoleskineModule = angular.module('MoleskineModule', []);
  * @description Moleskine directive for AngularJS
  * @author Alexandre Strzelewicz <as@unitech.io>
  */
-MoleskineModule.directive('moleskine', ['$http', function($http) {  
+MoleskineModule.directive('moleskine', [function() {
   var moleskine = {
     restrict : 'E',
     replace  : true,
     scope    : { 
-      width    : '@',
-      height   : '@',
-      bindData : '=',
-      baseContent : '='
+      bindData    : '=',
+      baseContent : '=',
+      width       : '@',
+      height      : '@',
+      input       : '@',
+      output      : '@',
+      defaultMode : '@',
+      cssClass    : '@',
+      autoGrow    : '@'
     },
     template : '<textarea></textarea>'
   };
@@ -44,20 +41,28 @@ MoleskineModule.directive('moleskine', ['$http', function($http) {
   }];
   
   moleskine.link = function(scope, el, attrs, ngModel) {
+    console.log(scope);
       var a = $(el).moleskine({
         width         : scope.width,
         height        : scope.height,
-        controls_rte  : rte_toolbar,
-        controls_html : html_toolbar,
-        controls_md   : md_toolbar,
-        input         : 'markdown',
-        output        : 'markdown',
+        defaultMode   : scope.defaultMode,
+        input         : scope.input,
+        output        : scope.output,
+        autoGrow      : scope.autoGrow,
         change        : function(err, content) {
+          var phase = scope.$root.$$phase;
+          
           scope.bindData = content;
-          scope.$apply();
+          
+          if (!(phase == '$apply' || phase == '$digest')) {
+            scope.$apply();
+          }          
         }
       });
 
+    if (scope.baseContent)
+      a.set_content(scope.baseContent);
+    
     scope.$watch('baseContent', function(aft, bef) {
       if (aft == bef) return;
       a.set_content(aft);

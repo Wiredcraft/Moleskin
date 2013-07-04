@@ -7,25 +7,47 @@
     margin                : 0;
     padding               : 0;
     clear                 : both;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: none;
     -webkit-font-smoothing: subpixel-antialiased;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    position : relative;
 }
 
-.rte-zone iframe, textarea {
-    border : 1px #999 solid !important;
-    -webkit-border-radius : 4px;
-    -moz-border-radius    : 4px;
-    border-radius         : 4px;
-    -webkit-box-shadow    : rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
-    box-shadow            : rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+.rte-zone .rte-infos {
+    height : 30px;
+    width : 40px;
+    position : absolute;
+    bottom : 0px;
+    left : 10px;
+    opacity : 0.7;
+    font-size : 14px;
+    color: transparent;
+    text-shadow: 0 0 1px rgba(0,0,0,0.9);
+}
+
+.rte-zone iframe {
+    
+}
+
+.rte-zone iframe, .rte-zone textarea {
+    border : 1px solid #ccc !important;
+    line-height : 20px;
+    padding     : 28px 30px 24px 29px;
+    font-size : 14px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    /* -webkit-border-radius : 4px; */
+    /* -moz-border-radius    : 4px; */
+    /* border-radius         : 4px; */
+    /* -webkit-box-shadow    : rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset; */
+    /* box-shadow            : rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset; */
 }
 
 .rte-zone textarea {
-    padding               : 10px;
-    font-size : 16px;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 }
 
 .rte-zone textarea.fullscreen {
@@ -240,9 +262,9 @@
     background-color: #e6e6e6;
     padding: 5px;
     line-height: 18px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    /* -webkit-border-radius: 4px; */
+    /* -moz-border-radius: 4px; */
+    /* border-radius: 4px; */
     background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
     background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
@@ -296,8 +318,7 @@
 }
 
 .rte-toolbar ul li a.active { 
-    background-color: #f9f9f9; 
-    border: 1px solid #ccc; 
+    background-color: #f9f9f9;     
 }
 
 .rte-zone  a.empty            { background-position: 0px 0px; }

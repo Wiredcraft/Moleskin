@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html x-ng-app="MoleskinExample">
+  <head>
+    <title>moleskin-angular.js</title>
+    <link rel="stylesheet" href="../../css/moleskine.css" />
+  </head>  
+  <body ng-controller="Moleskin">
+
+
+    <img alt="" src="../../img/moleskin.svg"  style="width:1200px"/>
+    
+    <div style="height:550px;">
+      <h2>Html -> Markdown output</h2>
+      <div style="float: left; margin-right : 30px;">
+        <moleskine bind-data="content"
+                   controls="m1controls"
+                   base-content="static_content"
+                   width="550"
+                   css-class="mole"
+                   default-mode="html"
+                   input="markdown"
+                   output="markdown"
+                   height="450"></moleskine>
+      </div>
+      <pre style="float:left">{{content}}</pre>
+    </div>
+
+    <div style="height:550px">
+      <h2>Markdown -> Html output</h2>
+      <div style="float: left; width : 620px">
+        <moleskine bind-data="content2"
+                   width="550"
+                   css-class="mole"
+                   default-mode="markdown"
+                   input="markdown"
+                   output="html"
+                   height="450"></moleskine>
+      </div>
+      <pre syle="float : left">{{content2}}</pre>
+    </div>
+
+    
+
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="../../js/showdown.js"></script>
+    <script type="text/javascript" src="../../js/reMarked.js"></script>
+    <script type="text/javascript" src="../../js/jquery.autogrow.js"></script>
+    <script type="text/javascript" src="../../js/moleskine.js"></script>
+    <script type="text/javascript" src="../../js/moleskine.conf.js"></script>
+    <script type="text/javascript" src="../../js/moleskine-angular.js"></script>
+    <!-- <script type="text/javascript" src="../../dist/moleskin-angular.min.js"></script> -->
+    
+  </body>
+</html>

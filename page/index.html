@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html x-ng-app="MoleskinExample">
+  <head>
+    <title>moleskin-angular.js</title>
+    <link rel="stylesheet" href="../css/moleskine.css" />
+    <link rel="stylesheet" href="./css/page.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+  </head>  
+  <body ng-controller="Moleskin">
+
+    <img id="forkme" src="./img/fork.svg"/>
+    
+    <header>
+      <div class="inner">
+        <div id="brand">
+          Moleskinator
+        </div>      
+        <ul>
+          <li>
+            What's in the box
+          </li>
+          <li>
+            Hey
+          </li>
+        </ul>
+      </div>
+    </header>
+    
+    <section id="moleskin-part">
+      <!-- <img alt="" src="./img/moleskin.svg"  style="width:1200px"/> -->
+      
+      <div id="editor">
+        <moleskine bind-data="content"
+                   controls="m1controls"
+                   base-content="static_content"
+                   width="420"
+                   default-mode="html"
+                   input="markdown"
+                   output="markdown"
+                   auto-grow="false"
+                   height="580"></moleskine>
+      </div>
+      <div id="preview">
+        <h3>Markdown output</h3>
+        <pre>{{content}}</pre>
+      </div>
+    </section>
+
+    <section id="doc">
+      <div class="inner" id="">
+        <h2>What's in the box ?</h2>
+        <p>
+          Moleskin is a light WYSIWYG, with almost no dependencies (only two files). Angular and jQuery compatible.
+          <ul>
+            <li>Only 35kb minified</li>
+            <li>Markdown to HTML</li>
+            <li>HTML to Markdown</li>
+            <li>Autogrow feature</li>
+          </ul>
+        </p>
+      </div>
+      
+      <div class="inner" id="api">
+        <h2>Quick start</h2>
+        <h3>Angular</h3>
+        <xmp>
+            <!-- JS -->
+            <script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
+            <script type="text/javascript" src="./dist/angular-moleskin.min.js"></script>
+
+            <!-- CSS -->
+            <link rel="stylesheet" href="./moleskine.css" />
+            
+            <moleskin bind-data="content2"
+                      base-content="static_content"
+                      class="hey"
+                      width="550"
+                      css-class="mole"
+                      default-mode="markdown"
+                      input="markdown"
+                      output="html"
+                      height="450"></moleskin>
+          </xmp>
+
+        <h3>jQuery</h3>
+
+        <xmp>
+          <!-- JS -->
+          <script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
+          <script type="text/javascript" src="./dist/moleskin.min.js"></script>
+
+          <!-- CSS -->
+          <link rel="stylesheet" href="./moleskine.css" />
+
+          <script type="text/javascript">
+            $(document).ready(function() {
+              el = $('.rte1').moleskine({
+                width         : 800,
+                height        : 500,
+                defaultMode : 'markdown',
+                onChange : function(err, data) {
+                  console.log(data);
+                }
+              });
+            });
+          </script>
+        </xmp>
+      </div>
+
+      <div class="inner" id="features">
+        <h2>API</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales, nisl consequat blandit egestas, nulla lectus vehicula elit, in suscipit eros dolor id ipsum. Ut et enim in sem gravida vehicula nec a mauris. Pellentesque fringilla mauris eu ullamcorper interdum. Pellentesque fringilla tellus id felis elementum, nec ullamcorper ligula pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sit amet velit enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at quam molestie, mattis dui a, viverra tortor. Nullam sed egestas enim, non adipiscing leo.
+        </p>
+
+        <xmp>
+          scope    : { 
+            bindData    : '=',
+            baseContent : '=',
+            width       : '@',
+            height      : '@',
+            input       : '@',
+            output      : '@',
+            defaultMode : '@',
+            cssClass    : '@',
+            autoGrow    : '@'
+          },
+        </xmp>
+      </div>
+    </section>
+
+
+
+    
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="../js/showdown.js"></script>
+    <script type="text/javascript" src="../js/reMarked.js"></script>
+    <script type="text/javascript" src="../js/jquery.autogrow.js"></script>
+    <script type="text/javascript" src="../js/moleskine.js"></script>
+    <script type="text/javascript" src="../js/moleskine.conf.js"></script>
+    <script type="text/javascript" src="../js/moleskine-angular.js"></script>
+    <!-- <script type="text/javascript" src="../../dist/moleskin-angular.min.js"></script> -->
+    
+  </body>
+</html>
