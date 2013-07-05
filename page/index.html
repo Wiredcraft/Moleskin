@@ -9,19 +9,30 @@
   </head>  
   <body ng-controller="Moleskin">
 
-    <img id="forkme" src="./img/fork.svg"/>
+    <a href="https://github.com/Wiredcraft/Moleskin" title="Github link">
+      <img id="forkme" src="./img/fork.svg"/>
+    </a>
     
     <header>
       <div class="inner">
         <div id="brand">
-          Moleskinator
+          angular-moleskin
         </div>      
         <ul>
           <li>
-            What's in the box
+            <a ng-click="scrollTo('what-is-in-the-box')">
+              What's in the box
+            </a>
           </li>
           <li>
-            Hey
+            <a ng-click="scrollTo('quick-start')">
+              Quick start
+            </a>
+          </li>
+          <li>
+            <a ng-click="scrollTo('api-part')">
+              API
+            </a>
           </li>
         </ul>
       </div>
@@ -49,7 +60,7 @@
 
     <section id="doc">
       <div class="inner" id="">
-        <h2>What's in the box ?</h2>
+        <h2 id="what-is-in-the-box">What's in the box ?</h2>
         <p>
           Moleskin is a light WYSIWYG, with almost no dependencies (only two files). Angular and jQuery compatible.
           <ul>
@@ -61,8 +72,8 @@
         </p>
       </div>
       
-      <div class="inner" id="api">
-        <h2>Quick start</h2>
+      <div class="inner" id="api-part">
+        <h2 id="quick-start">Quick start</h2>
         <h3>Angular</h3>
         <xmp>
             <!-- JS -->
@@ -109,7 +120,7 @@
       </div>
 
       <div class="inner" id="features">
-        <h2>API</h2>
+        <h2 id="api">API</h2>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales, nisl consequat blandit egestas, nulla lectus vehicula elit, in suscipit eros dolor id ipsum. Ut et enim in sem gravida vehicula nec a mauris. Pellentesque fringilla mauris eu ullamcorper interdum. Pellentesque fringilla tellus id felis elementum, nec ullamcorper ligula pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sit amet velit enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at quam molestie, mattis dui a, viverra tortor. Nullam sed egestas enim, non adipiscing leo.

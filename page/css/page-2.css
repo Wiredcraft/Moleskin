@@ -6,7 +6,10 @@ body {
 
 header {
     height : 150px;
-    background-color : #F4F1EA;
+    background-color : #2a343a;
+    color : white;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#2a343a), to(#333f45));
+    background-image: -moz-linear-gradient(center right, #2a343a 0%, #333f45 100%);
 }
 
 header .inner {
