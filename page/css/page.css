@@ -109,13 +109,15 @@ header ul li a:hover {
 
 #moleskin-part #editor {
     position : absolute;
-    left : 236px;
+    left : 50%;
     top : 58px;
+    margin-left: -440px;
 }
 
 #moleskin-part #preview {
     position : absolute;
-    right : 236px;
+    right : 50%;
+    margin-right: -440px;
     top : 50px;
     width : 420px;
 }
